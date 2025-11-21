@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jadwal Harian Santri</title>
+    <link rel="stylesheet" href="style.css">
+    <script>
+        function toggleMenu() {
+            const menu = document.getElementById('navMenu');
+            menu.classList.toggle('active');
+        }
+    </script>
+</head>
+<body>
+
+    <header class="header-nav">
+      <div class="header-item">
+            <img src="images/Logo_sekolah.png" alt="Logo Sekolah" class="logo-sekolah">
+            <h1>Jadwal Keseharian Santri</h1>
+        </div>
+        <button class="menu-toggle" onclick="toggleMenu()">&#9776;</button>
+        <nav>
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="index.html">🏡 Home</a></li>
+                <li><a href="biodata.html">👤 Biodata</a></li>
+                <li><a href="galeri.html">🖼️ Galeri</a></li>
+                <li><a href="jadwal.html" id="active">📅 Jadwal</a></li>
+                <li><a href="feedback.html">📝 Feedback</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="container">
+        <section class="content-box">
+            <h2>📅 Jadwal Pekanan Saya</h2>
+            <p>Jadwal ini berlaku untuk semester genap tahun ajaran 1446 H.</p>
+
+            <div class="table-wrapper">
+                <table class="schedule-table">
+                    <thead>
+                        <tr>
+                            <th rowspan="2">Waktu</th>
+                            <th colspan="3">Mata Pelajaran Wajib</th>
+                            <th rowspan="2">Kegiatan Lain</th>
+                        </tr>
+                        <tr>
+                            <th>Senin-Selasa</th>
+                            <th>Rabu-Kamis</th>
+                            <th>Jum'at</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>07:30 - 09:00</td>
+                            <td>Fikih</td>
+                            <td>Tauhid</td>
+                            <td rowspan="2">Riyadhah (Olah Raga)</td>
+                            <td>Hafalan Al-Qur'an</td>
+                        </tr>
+                        <tr>
+                            <td>09:00 - 10:30</td>
+                            <td>Bahasa Arab</td>
+                            <td>Sirah Nabawiyah</td>
+                            <td>Muroja'ah Pagi</td>
+                        </tr>
+                        <tr>
+                            <td>10:30 - 11:00</td>
+                            <td colspan="4">Istirahat dan Persiapan Shalat Dzuhur</td>
+                        </tr>
+                        <tr>
+                            <td>13:00 - 14:30</td>
+                            <td>Web Development (Praktik)</td>
+                            <td>Tahsin</td>
+                            <td>&mdash;</td>
+                            <td>Tidur Siang</td>
+                        </tr>
+                        <tr>
+                            <td>16:00 - 17:30</td>
+                            <td colspan="3">Kegiatan Ekstrakurikuler (Panahan/Berkuda)</td>
+                            <td>Tugas Kelompok</td>
+                        </tr>
+                        <tr>
+                            <td>20:00 - 21:30</td>
+                            <td>Belajar Mandiri</td>
+                            <td>Belajar Mandiri</td>
+                            <td>Kajian Umum</td>
+                            <td>Shalat Isya Berjamaah</td>
+                        </tr>
+                    </tbody>
+                    <tfoot>
+                        <tr>
+                            <td colspan="5"><i>Jadwal dapat berubah sewaktu-waktu sesuai kebijakan sekolah.</i></td>
+                        </tr>
+                    </tfoot>
+                </table>
+            </div>
+        </section>
+    </main>
+</body>
+</html>

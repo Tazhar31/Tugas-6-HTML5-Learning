@@ -1,0 +1,579 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+
+:root {
+    --primary-color: #007bff;
+    --secondary-color: #6c757d;
+    --background-light: background-color: #ffffff;
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24'%3E%3Cg fill='%236708ff' fill-opacity='0.07'%3E%3Cpolygon fill-rule='evenodd' points='8 4 12 6 8 8 6 12 4 8 0 6 4 4 6 0 8 4'/%3E%3C/g%3E%3C/svg%3E");
+    --text-dark: #343a40;
+    --border-radius-default: 8px;
+    --box-shadow-default: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    line-height: 1.6;
+    background-color: var(--background-light);
+    color: var(--text-dark);
+    padding-top: 60px; /* Jarak untuk fixed header */
+}
+
+
+/* --- Header & Navigasi (Flexbox) --- */
+.header-nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: #ffffff;
+    box-shadow: var(--box-shadow-default);
+    z-index: 1000;
+    padding: 10px 20px;
+}
+
+.header-item {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+}
+
+.header-item img {
+    height: 50px;
+    display: flex;
+}
+
+.nav-menu {
+    list-style: none;
+    display: flex;
+    flex-direction: row; /* Mobile: 1 atau 2 item per baris */
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+#active {
+    background-color: var(--primary-color);
+    color: white;
+}
+
+.nav-menu li a {
+    display: block;
+    text-decoration: none;
+    color: var(--primary-color);
+    padding: 8px 12px;
+    border-radius: 5px;
+    transition: background-color 0.3s, color 0.3s;
+    font-weight: bold;
+    text-align: center;
+
+}
+
+.nav-menu li a:hover {
+    background-color: var(--primary-color);
+    color: white;
+    
+}
+
+.nav-menu.active {
+  display: flex;
+    max-height: 500px;
+    flex-direction: row; /* Ubah ke baris saat aktif */
+    flex-wrap: wrap; /* Menu bisa 2 item per baris */
+    justify-content: center;
+    gap: 0.5rem;
+    padding-top: 0.5rem;
+}
+
+
+
+.menu-toggle {
+    display: none;
+}
+
+.logo-sekolah {
+    height: 50px;
+    align-items: center;
+    justify-content: center;
+}
+
+/* --- Konten Utama --- */
+.container {
+    max-width: 100%;
+    padding: 20px;
+}
+
+/* Border-left untuk Judul Box */
+.content-box {
+    background-color: white;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: var(--border-radius-default);
+    box-shadow: var(--box-shadow-default);
+}
+
+.shortcut {
+    list-style: none;
+}
+
+.shortcut li a {
+    display: inline-block;
+    text-decoration: none;
+    color: var(--primary-color);
+    padding: 8px 12px;
+    border-radius: 5px;
+    transition: background-color 0.3s, color 0.3s;
+    font-weight: bold;
+    text-align: left;
+}
+
+.shortcut li a:hover {
+    color: white;
+    background-color: var(--primary-color);
+}
+
+.content-box h2, .content-box h3 {
+    border-left: 5px solid var(--primary-color);
+    padding-left: 10px;
+    margin-bottom: 15px;
+}
+
+.hr {
+    border: none;
+    border-top: 1px solid #ccc;
+    margin: 30px 0;
+}
+
+/* --- Gambar --- */
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+.gallery-item img, .profile-image img {
+    border-radius: var(--border-radius-default);
+    object-fit: cover; /* Menjaga rasio */
+}
+
+/* --- Galeri (Flexbox - Mobile: 1 kolom) --- */
+.gallery-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin-top: 15px;
+    margin-left: -7.5px;
+    margin-right: -7.5px;
+}
+
+.gallery-item {
+    flex-grow: 1;
+    flex-shrink: 0;
+    flex-basis: 220px;
+    width: 100%; /* Penuh lebar */
+    background-color: white;
+    border-radius: var(--border-radius-default);
+    overflow: hidden;
+    box-shadow: var(--box-shadow-default);
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 300px; /* Tinggi tetap di mobile */
+}
+
+.gallery-item p {
+    padding: 10px;
+    text-align: center;
+}
+
+.video {
+    flex-grow: 1;
+    flex-shrink: 0;
+    flex-basis: 220px;
+    width: 100%; /* Penuh lebar */
+    background-color: white;
+    border-radius: var(--border-radius-default);
+    overflow: hidden;
+    box-shadow: var(--box-shadow-default);
+}
+
+.vid-box {
+    background: var(--background-light);
+    border-radius: var(--border-radius-default);
+    padding: 15px;
+}
+
+.vid {
+    background-color: white;
+    padding: 20px;
+    margin-top: 40px;
+    margin-bottom: 20px;
+    border-radius: var(--border-radius-default);
+    box-shadow: var(--box-shadow-default);
+}
+
+.vid-box h2 {
+    border-left: 5px solid var(--primary-color);
+    padding-left: 10px;
+    margin-bottom: 15px;
+}
+
+.video-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+/* --- Biodata (Mobile: Stack) --- */
+#biodata-profile {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+#Profil {
+    margin-top: 20px;
+}
+
+.profile-image {
+    width: 100%;
+    text-align: left;
+}
+
+.profile-image img {
+    width: 250px;
+    height: 250px;
+    border: 2px solid var(--primary-color);
+}
+
+.profile-details {
+    width: 100%;
+}
+
+/* --- Tabel Jadwal (Mobile: Scrollable) --- */
+.table-wrapper {
+    overflow-x: auto;
+    width: 100%;
+}
+
+.schedule-table {
+    width: 800px; /* Menentukan lebar minimum untuk scroll */
+    border-collapse: collapse;
+    margin-top: 15px;
+}
+
+.schedule-table th, .schedule-table td {
+    border: 1px solid #ccc;
+    padding: 10px;
+    text-align: left;
+}
+
+.schedule-table thead {
+    background-color: var(--primary-color);
+    color: white;
+}
+
+/* --- Form Feedback (Mobile: 1 Kolom) --- */
+.feedback-form fieldset {
+    border: 1px solid #ccc;
+    padding: 15px;
+    margin-bottom: 20px;
+    border-radius: var(--border-radius-default);
+}
+
+.form-group {
+    margin-bottom: 15px;
+    display: flex;
+    flex-direction: column;
+}
+
+.form-group label {
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.form-group input:not([type="radio"]):not([type="checkbox"]), 
+.form-group select, 
+.form-group textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ced4da;
+    border-radius: 4px;
+}
+
+.form-group textarea {
+    resize: vertical;
+    min-height: 100px;
+}
+
+.form-actions {
+    display: flex;
+    gap: 10px;
+    justify-content: flex-end;
+}
+
+.form-actions button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s;
+}
+
+.form-actions button[type="submit"] {
+    background-color: var(--primary-color);
+    color: white;
+}
+
+.form-actions button[type="reset"] {
+    background-color: var(--secondary-color);
+    color: white;
+}
+
+.form-actions button[type="submit"]:hover {
+    background-color: #0056b3;
+}
+.form-actions button[type="reset"]:hover {
+    background-color: #5a6268;
+}
+
+@media (max-width: 599px) {
+    body {
+        padding: 10px;
+    }
+
+    .container {
+        padding: 30% 0;
+    }
+
+    .content-box {
+        justify-content: center;
+        margin: 0;
+    }
+
+.header-nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: #ffffff;
+    box-shadow: var(--box-shadow-default);
+    z-index: 1000;
+    padding: 10px 20px;
+}
+
+.nav-menu {
+    display: none;
+}
+
+.nav-menu.active {
+  display: flex;
+    max-height: 500px;
+    flex-direction: column; /* Ubah ke baris saat aktif */
+    flex-wrap: wrap; /* Menu bisa 2 item per baris */
+    justify-content: center;
+    gap: 0.5rem;
+    padding-top: 0.5rem;
+}
+
+.menu-toggle {
+    display: block; /* Hamburger icon terlihat di mobile */
+    background: none;
+    border: none;
+    color: var(--bg-color);
+    font-size: 1.5rem;
+    cursor: pointer;
+    padding: 0.5rem;
+    position: fixed;
+    /* Dorong ke kanan dan ke atas */
+    top: 10px;    /* Jarak dari atas */
+    right: 10px;  /* Jarak dari kanan */
+    /* Pastikan tombol ada di atas konten lain */
+    z-index: 1000;
+}
+
+.nav-menu li a {
+    display: block;
+    text-decoration: none;
+    color: var(--primary-color);
+    padding: 8px 12px;
+    border-radius: 5px;
+    transition: background-color 0.3s, color 0.3s;
+    font-weight: bold;
+    text-align: center;
+}
+
+.nav-menu li a:hover {
+    background-color: var(--primary-color);
+    color: white;
+}
+
+
+
+
+}
+
+/* ========================================= */
+/* 📐 Tablet Styling (min-width: 600px dan max-width: 1023px) */
+/* ========================================= */
+@media (min-width: 600px) and (max-width: 1023px) {
+    .container {
+        max-width: 90%;
+        margin: 12% auto;
+    }
+    
+
+    /* Navigasi (Tablet: Rata tengah, lebih rapat) */
+    
+    .nav-menu {
+        margin-top: 15px;
+        justify-content: center;
+        gap: 30px;
+    }
+    
+    .nav-menu.active {
+        padding-top: 0;
+    }
+
+    /* Galeri (Tablet: 2 Kolom) */
+    .gallery-grid {
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+    
+    .gallery-item {
+        width: calc(50% - 10px); /* 2 kolom dengan gap 20px */
+    }
+    
+    .gallery-item img {
+        height: 250px;
+    }
+
+    /* Biodata (Tablet: 2 Kolom) */
+    #biodata-profile {
+        flex-direction: row;
+    }
+
+    .profile-image {
+        width: 30%;
+        min-width: 200px;
+    }
+
+    .profile-details {
+        width: 70%;
+    }
+
+    /* Form (Tablet: Beberapa 2 Kolom) */
+    .form-row {
+        display: flex;
+        gap: 20px;
+    }
+
+    .form-row .form-group {
+        width: 50%;
+    }
+
+    /* Textarea, Select box penuh */
+    .full-width-field {
+        width: 100%;
+    }
+}
+
+/* ========================================= */
+/* 💻 Desktop Styling (min-width: 1024px) */
+/* ========================================= */
+@media (min-width: 1024px) {
+    body {
+        padding-top: 70px;
+    }
+    
+    .header-nav {
+        padding: 15px 40px;
+    }
+
+    .menu-toggle {
+    display: none;
+}
+
+    .container {
+        max-width: 1140px;
+        margin: 12% auto;
+    }
+
+    .content-box {
+        margin: 0 80px;
+    }
+
+    /* Navigasi (Desktop: Rapat) */
+    .nav-menu {
+        margin-top: 15px;
+        justify-content: center;
+        gap: 30px;
+    }
+    
+    .nav-menu li a {
+        padding: 10px 15px;
+    }
+
+    /* Galeri (Desktop: 3-4 Kolom) */
+    .gallery-grid {
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+    
+    /* 4 Kolom */
+    .gallery-item {
+        width: calc(25% - 15px); /* 4 kolom dengan gap 20px */
+    }
+
+    /* Jika ingin 3 kolom:
+    .gallery-item {
+        width: calc(33.333% - 13.333px);
+    } */
+
+    .gallery-item img {
+        height: 200px;
+    }
+
+    .video-container {
+        display: flex;
+        justify-content: center;
+        margin-top: 20px;
+    }
+
+    .video {
+        max-width: 100%;
+        height: 315px;
+        border-radius: var(--border-radius-default);
+        box-shadow: var(--box-shadow-default);
+    }
+
+    /* Biodata (Desktop: Sama seperti Tablet) */
+    #biodata-profile {
+        flex-direction: row;
+    }
+    
+    /* Form (Desktop: 2 Kolom Layout) */
+    .form-row {
+        display: flex;
+        gap: 20px;
+    }
+
+    .form-row .form-group {
+        width: 50%;
+    }
+
+
+}

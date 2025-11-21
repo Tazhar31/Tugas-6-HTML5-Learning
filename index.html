@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portal Utama - Website Profil Santri</title>
+    <link rel="stylesheet" href="style.css">
+    <script>
+        function toggleMenu() {
+            const menu = document.getElementById('navMenu');
+            menu.classList.toggle('active');
+        }
+    </script>
+</head>
+<body>
+
+    <header class="header-nav">
+      <div class="header-item">
+            <img src="images/Logo_sekolah.png" alt="Logo Sekolah" class="logo-sekolah">
+            <h1>SMA IT HSIBS - Purworejo</h1>
+        </div>
+        <button class="menu-toggle" onclick="toggleMenu()">&#9776;</button>
+        <nav>
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="index.html" id="active">🏡 Home</a></li>
+                <li><a href="biodata.html">👤 Biodata</a></li>
+                <li><a href="galeri.html">🖼️ Galeri</a></li>
+                <li><a href="jadwal.html">📅 Jadwal</a></li>
+                <li><a href="feedback.html">📝 Feedback</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <main class="container">
+        <section class="content-box">
+            <h2>Selamat Datang di Website Profil Saya</h2>
+            <p>Assalamu'alaikum Warahmatullahi Wabarakatuh.</p>
+            <p>Website ini dibuat sebagai bagian dari tugas praktik pengembangan web dasar. Anda dapat menjelajahi informasi pribadi, foto, jadwal, dan memberikan masukan melalui menu navigasi di atas.</p>
+            
+            <hr class="hr">
+            
+            <h3>Link Cepat</h3>
+            <ul class="shortcut">
+                <li><a href="biodata.html">Lihat Profil Lengkap</a></li>
+                <li><a href="galeri.html">Lihat Kumpulan Foto</a></li>
+                <li><a href="feedback.html">Berikan Masukan</a></li>
+            </ul>
+        </section>
+    </main>
+
+</body>
+</html>

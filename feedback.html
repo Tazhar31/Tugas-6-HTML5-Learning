@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Feedback dan Buku Tamu</title>
+    <link rel="stylesheet" href="style.css">
+    <script>
+        function toggleMenu() {
+            const menu = document.getElementById('navMenu');
+            menu.classList.toggle('active');
+        }
+    </script>
+</head>
+<body>
+
+    <header class="header-nav">
+      <div class="header-item">
+            <img src="images/Logo_sekolah.png" alt="Logo Sekolah" class="logo-sekolah">
+            <h1>Form Feedback</h1>
+        </div>
+        <button class="menu-toggle" onclick="toggleMenu()">&#9776;</button>
+        <nav>
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="index.html">🏡 Home</a></li>
+                <li><a href="biodata.html">👤 Biodata</a></li>
+                <li><a href="galeri.html">🖼️ Galeri</a></li>
+                <li><a href="jadwal.html">📅 Jadwal</a></li>
+                <li><a href="feedback.html" id="active">📝 Feedback</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="container">
+        <section class="content-box">
+            <h2>📝 Formulir Masukan (Feedback)</h2>
+            <p>Silakan berikan masukan Anda mengenai website ini atau sampaikan pesan melalui formulir di bawah.</p>
+            
+            <form action="https://httpbin.org/post" method="POST" class="feedback-form">
+
+                <fieldset>
+                    <legend>Data Kontak Anda</legend>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="nama">Nama Lengkap (text):</label>
+                            <input type="text" id="nama" name="nama_pengirim" required placeholder="Cth: Abdullah">
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email (email):</label>
+                            <input type="email" id="email" name="email_pengirim" required placeholder="Cth: anda@example.com">
+                        </div>
+                    </div>
+                </fieldset>
+
+                <fieldset>
+                    <legend>Detail Masukan</legend>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="rating">Rating Website (number, 1-5):</label>
+                            <input type="number" id="rating" name="rating_website" min="1" max="5" value="5" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label>Jenis Masukan (radio):</label>
+                            <div>
+                                <input type="radio" id="saran" name="jenis_masukan" value="saran" checked>
+                                <label for="saran">Saran</label>
+                                <input type="radio" id="kritik" name="jenis_masukan" value="kritik">
+                                <label for="kritik">Kritik</label>
+                                <input type="radio" id="pujian" name="jenis_masukan" value="pujian">
+                                <label for="pujian">Pujian</label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group full-width-field">
+                            <label for="halaman">Halaman Terbaik (select):</label>
+                            <select id="halaman" name="halaman_favorit" required>
+                                <option value="" disabled selected>Pilih Halaman</option>
+                                <option value="biodata">Biodata</option>
+                                <option value="galeri">Galeri</option>
+                                <option value="jadwal">Jadwal</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="form-group full-width-field">
+                        <label for="pesan">Pesan/Komentar Anda (textarea):</label>
+                        <textarea id="pesan" name="pesan_lengkap" rows="5" required placeholder="Tuliskan pesan Anda di sini..."></textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Saya setuju untuk (checkbox):</label>
+                        <div>
+                            <input type="checkbox" id="publikasi" name="setuju_publikasi" value="ya" required>
+                            <label for="publikasi">Masukan boleh dipublikasikan (Wajib Cek)</label>
+                        </div>
+                    </div>
+
+                </fieldset>
+
+                <div class="form-actions">
+                    <button type="reset">Bersihkan Formulir (Reset)</button>
+                    <button type="submit">Kirim Feedback (Submit)</button>
+                </div>
+
+            </form>
+        </section>
+    </main>
+</body>
+</html>

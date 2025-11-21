@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Biodata Lengkap Santri</title>
+    <link rel="stylesheet" href="style.css">
+    <script>
+        function toggleMenu() {
+            const menu = document.getElementById('navMenu');
+            menu.classList.toggle('active');
+        }
+    </script>
+</head>
+<body>
+
+    <header class="header-nav">
+      <div class="header-item">
+            <img src="images/Logo_sekolah.png" alt="Logo Sekolah" class="logo-sekolah">
+            <h1>Profil Santri</h1>
+        </div>
+        <button class="menu-toggle" onclick="toggleMenu()">&#9776;</button>
+        <nav>
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="index.html">🏡 Home</a></li>
+                <li><a href="biodata.html" id="active">👤 Biodata</a></li>
+                <li><a href="galeri.html">🖼️ Galeri</a></li>
+                <li><a href="jadwal.html">📅 Jadwal</a></li>
+                <li><a href="feedback.html">📝 Feedback</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="container">
+        <section class="content-box">
+            <h2>👤 Biodata Lengkap</h2>
+            
+            <div id="biodata-profile">
+                <div class="profile-image">
+                    <img src="images/g.png" alt="Foto Diri Santri" class="img-responsive">
+                    <p id="Profil"><b>Nama: Ryatsah Fatih Al Muntazhar</b><br>
+                    <b>Kelas:</b> 10B - IT<br>
+                    <b>Tempat/Tanggal Lahir:</b> Tanggerang Selatan, 9 Juni 2001</p>
+                </div>
+
+                <div class="profile-details">
+                    <h3>Tentang Saya</h3>
+                    <p>Saya adalah seorang santri di HSI Boarding School yang memiliki semangat tinggi dalam mempelajari ilmu agama dan teknologi. Saya percaya bahwa menggabungkan keduanya akan menghasilkan manfaat yang besar bagi umat. Motto saya: "Terus belajar, terus berkarya."</p>
+                    <br>
+                    <hr class="hr">
+
+                    <h3>Hobi</h3>
+                    <ul>
+                        <li>Membaca buku sejarah Islam.</li>
+                        <li>Memanah dan berkuda.</li>
+                        <li>Membuat desain antarmuka web (UI/UX).</li>
+                    </ul>
+                    <hr class="hr">
+
+                    <h3>Cita-Cita</h3>
+                    <ol>
+                        <li>Menjadi seorang Da'i yang mumpuni.</li>
+                        <li>Menjadi pengembang web profesional.</li>
+                        <li>Melanjutkan studi di Universitas Islam Madinah.</li>
+                    </ol>
+                </div>
+            </div>
+            
+        </section>
+    </main>
+</body>
+</html>
